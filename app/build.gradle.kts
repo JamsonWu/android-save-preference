@@ -78,4 +78,6 @@ dependencies {
 
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     debugImplementation("androidx.compose.ui:ui-tooling")
+    // 添加 datastore-preferences 依赖，实现简单键值对数据保存用户偏好数据
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
 }

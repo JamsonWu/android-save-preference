@@ -18,6 +18,7 @@ package com.example.dessertrelease.data.local
 /*
  * Set data for Android Release dessert name
  * the list contain distinct sequential dessert name
+ * Dessert是点心
  */
 object LocalDessertReleaseData {
     val dessertReleases = listOf(

@@ -39,6 +39,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
@@ -58,11 +59,15 @@ import com.example.dessertrelease.ui.theme.DessertReleaseTheme
  */
 @Composable
 fun DessertReleaseApp(
+    // 初始化ViewModel实例
     dessertReleaseViewModel: DessertReleaseViewModel = viewModel(
         factory = DessertReleaseViewModel.Factory
     )
 ) {
+    // 使用 by 方式 uiState对象内容发生变化时，UI会自动更新重新渲染
+    // val uiState by dessertReleaseViewModel.uiState.collectAsState()
     DessertReleaseScreen(
+        // 读取一次状态值，不会自动更新
         uiState = dessertReleaseViewModel.uiState.collectAsState().value,
         selectLayout = dessertReleaseViewModel::selectLayout
     )
